@@ -25,18 +25,18 @@
 // 3. Se for string, ordena alfabeticamente (asc ou desc).
 //
 // O spread [...tasks] cria uma cópia do array original para não alterar ele direto.
-import type { TaskModel } from '../models/TaskModel';
+import type { TaskModel } from "../models/TaskModel";
 
 // Define os parâmetros esperados pela função
 export type SortTasksOptions = {
   tasks: TaskModel[]; // Lista de tarefas que será ordenada
-  direction?: 'asc' | 'desc'; // Direção da ordenação: crescente ou decrescente (opcional)
+  direction?: "asc" | "desc"; // Direção da ordenação: crescente ou decrescente (opcional)
   field?: keyof TaskModel; // Qual campo da tarefa será usado para ordenar (opcional)
 };
 
 export function sortTasks({
-  field = 'startDate', // Se o campo não for informado, usamos 'startDate' como padrão
-  direction = 'desc', // Se a direção não for informada, usamos 'desc' (decrescente)
+  field = "startDate", // Se o campo não for informado, usamos 'startDate' como padrão
+  direction = "desc", // Se a direção não for informada, usamos 'desc' (decrescente)
   tasks = [], // Se nenhuma lista for passada, usamos uma lista vazia
 }: SortTasksOptions): TaskModel[] {
   return [...tasks].sort((a, b) => {
@@ -58,8 +58,8 @@ export function sortTasks({
     // --- COMPARAÇÃO NUMÉRICA ---
 
     // Se os dois valores forem números, fazemos uma subtração para ordenar
-    if (typeof aValue === 'number' && typeof bValue === 'number') {
-      return direction === 'asc'
+    if (typeof aValue === "number" && typeof bValue === "number") {
+      return direction === "asc"
         ? aValue - bValue // Ex: 1, 2, 3...
         : bValue - aValue; // Ex: 3, 2, 1...
     }
@@ -67,8 +67,8 @@ export function sortTasks({
     // --- COMPARAÇÃO DE STRINGS ---
 
     // Se os dois valores forem textos, usamos localeCompare para comparar em ordem alfabética
-    if (typeof aValue === 'string' && typeof bValue === 'string') {
-      return direction === 'asc'
+    if (typeof aValue === "string" && typeof bValue === "string") {
+      return direction === "asc"
         ? aValue.localeCompare(bValue) // A -> Z
         : bValue.localeCompare(aValue); // Z -> A
     }

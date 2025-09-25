@@ -1,14 +1,14 @@
-import { PlayCircleIcon } from 'lucide-react';
-import { Cycles } from '../Cycles';
-import { DefaultButton } from '../DefaultButton';
-import { DefaultInput } from '../DefaultInput';
-import { useState } from 'react';
+import { PlayCircleIcon } from "lucide-react";
+import { Cycles } from "../Cycles";
+import { DefaultButton } from "../DefaultButton";
+import { DefaultInput } from "../DefaultInput";
+import { useState } from "react";
 
 export function MainForm() {
-  const[taskName, setTaskName] = useState('');
-  function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>){
+  const [taskName, setTaskName] = useState("");
+  function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log('deu certo', taskName)
+    console.log("deu certo", taskName);
   }
   return (
     <form onSubmit={handleCreateNewTask} className="form" action="">
@@ -19,7 +19,7 @@ export function MainForm() {
           labelText={`Task`}
           placeholder="Digite sua tarefa"
           value={taskName}
-          onChange={(e)=> setTaskName(e.target.value)}
+          onChange={(e) => setTaskName(e.target.value)}
         />
       </div>
 

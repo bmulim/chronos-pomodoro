@@ -1,14 +1,20 @@
-import styles from './styles.module.css';
-import { HistoryIcon, HouseIcon, MoonIcon, SettingsIcon, SunIcon } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { RouterLink } from '../RouterLink';
+import styles from "./styles.module.css";
+import {
+  HistoryIcon,
+  HouseIcon,
+  MoonIcon,
+  SettingsIcon,
+  SunIcon,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { RouterLink } from "../RouterLink";
 
-type AvaliablesThemes = 'light' | 'dark';
+type AvaliablesThemes = "light" | "dark";
 
 export function Menu() {
   const [theme, setTheme] = useState<AvaliablesThemes>(() => {
     const storageTheme =
-      (localStorage.getItem('theme') as AvaliablesThemes) || 'dark';
+      (localStorage.getItem("theme") as AvaliablesThemes) || "dark";
     return storageTheme;
   });
 
@@ -22,14 +28,14 @@ export function Menu() {
   ) {
     event.preventDefault(); //não recarrega a página
     setTheme((prevTheme) => {
-      const nextTheme = prevTheme === 'dark' ? 'light' : 'dark';
+      const nextTheme = prevTheme === "dark" ? "light" : "dark";
       return nextTheme;
     });
   }
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (

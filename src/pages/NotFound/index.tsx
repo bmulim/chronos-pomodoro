@@ -19,7 +19,7 @@ export function NotFound() {
           </p>
           <p>
             Mas calma, você não está perdido no espaço (ainda). Dá pra voltar em
-            segurança para a <a href="/">página principal</a> ou{' '}
+            segurança para a <a href="/">página principal</a> ou{" "}
             <a href="/history">para o histórico</a> — ou pode ficar por aqui e
             fingir que achou uma página secreta que só os exploradores mais
             legais conseguem acessar. 🧭✨

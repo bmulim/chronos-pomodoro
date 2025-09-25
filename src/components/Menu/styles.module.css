@@ -1,29 +1,29 @@
-.menu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:1.6rem;
-    padding: 3.2rem;
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 3.2rem;
 }
 
 .menuLink {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    text-decoration: none;
-    background-color: var(--primary);
-    color: var(--text-over-primary);
-    transition: all 0.1s ease-in-out;
-    border-radius: .8rem;
-    padding: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--text-over-primary);
+  transition: all 0.1s ease-in-out;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
 }
 
 .menuLink:hover {
-    filter: brightness(80%);
+  filter: brightness(80%);
 }
 
-.menuLink svg{
-    width: 2.4rem;
-    height: 2.4rem;
+.menuLink svg {
+  width: 2.4rem;
+  height: 2.4rem;
 }

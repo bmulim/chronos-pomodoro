@@ -7,5 +7,5 @@ export type TaskModel = {
   startDate: number;
   completeDate: number | null; //quando a tarefa foi finalizada
   interruptDate: number | null; //quando a tarefa foi interrompida
-  type: keyof TaskStateModel['config']; 
-}
+  type: keyof TaskStateModel["config"];
+};
