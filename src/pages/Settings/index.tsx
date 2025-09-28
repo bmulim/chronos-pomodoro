@@ -1,6 +1,6 @@
 import "../../styles/global.css";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { SaveIcon } from "lucide-react";
 import { Container } from "../../components/Container";
 import { Heading } from "../../components/Heading";
@@ -48,7 +48,7 @@ export function Settings() {
     }
 
     dispatch({
-      type: TaskActionTypes.CHANGE_SETTINGS, 
+      type: TaskActionTypes.CHANGE_SETTINGS,
       payload: {
         workTime,
         shortBreakTime,
@@ -56,8 +56,13 @@ export function Settings() {
       },
     });
 
-    showMessage.success('Configurações salvas.')
+    showMessage.success("Configurações salvas.");
   }
+
+  useEffect(() => {
+    document.title = "Configurações - Chrono Pomodoro";
+  }, []);
+
   return (
     <MainTemplate>
       <Container>
